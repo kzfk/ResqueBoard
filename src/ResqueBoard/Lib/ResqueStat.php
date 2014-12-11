@@ -566,7 +566,9 @@ class ResqueStat
         foreach ($queuesList as $queueName) {
             $pipelineCommands[] = array('llen', 'queue:' . $queueName);
         }
-
+        if (count($queuesList) == 0) {
+            return array();
+        }
         return array_combine($queuesList, Service::Redis()->pipeline($pipelineCommands));
     }
 
