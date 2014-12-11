@@ -63,7 +63,7 @@ date_default_timezone_set(isset($settings['timezone']) ? $settings['timezone'] :
  * @var array
  */
 $logTypes = array('start', 'got', 'process', 'fork', 'done', 'fail', 'sleep', 'prune', 'stop', 'pause', 'resume');
-
+require_once dirname(dirname(dirname(ROOT))) . DS . 'userlib' . DS . 'logtypeMerge_ResqueBoard.php';
 /**
  * Cube server address without the scheme (http, https, ws, ...)
  *
